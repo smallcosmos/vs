@@ -1,0 +1,63 @@
+{
+  "name": "vs",
+  "version": "1.0.0",
+  "description": "SPA of Vue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node build/dev-server.js",
+    "start": "node build/dev-server.js",
+    "build": "node build/build.js",
+    "lint": "eslint --ext .js,.vue src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smallcosmos/vs.git"
+  },
+  "author": "linxingjian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smallcosmos/vs/issues"
+  },
+  "homepage": "https://github.com/smallcosmos/vs#readme",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "chalk": "^1.1.3",
+    "child_process": "^1.0.2",
+    "css-loader": "^0.28.1",
+    "eslint": "^3.19.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-html": "^2.0.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "html-webpack-plugin": "^2.28.0",
+    "less-loader": "^4.0.3",
+    "optimize-css-assets-webpack-plugin": "^1.3.1",
+    "ora": "^1.2.0",
+    "rimraf": "^2.6.1",
+    "sass-loader": "^6.0.5",
+    "scss-loader": "^0.0.1",
+    "semver": "^5.3.0",
+    "shelljs": "^0.7.7",
+    "url-loader": "^0.5.8",
+    "vue-loader": "^12.0.3",
+    "vue-style-loader": "^3.0.1",
+    "vue-template-compiler": "^2.3.3",
+    "webpack": "^2.5.1",
+    "webpack-merge": "^4.1.0"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "dependencies": {
+    "vue": "^2.3.3",
+    "vue-router": "^2.5.3"
+  }
+}
