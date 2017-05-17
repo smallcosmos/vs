@@ -4,6 +4,11 @@ import App from './App';
 import Home from '@/components/Home';
 import Hello from '@/components/Hello';
 
+// there is a bug, see also:
+// https://github.com/webpack-contrib/less-loader/issues/109#issuecomment-253797335
+// import 'assets/css/common.less';
+
+import './assets/css/common.sass';
 Vue.use(Router);
 
 var routes = [
