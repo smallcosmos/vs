@@ -12,6 +12,7 @@ module.exports = merge(baseConfig, {
 		filename: path.posix.join(config.build.assetsSubDirectory, 'js/[name].[chunkhash].js'),
 		// chunkFilename: '[id]'
 	},
+	// controls if and how source maps are generated.
 	devtool: config.build.jsSourceMap ? 'source-map' : false,
 	plugins: [
 		new webpack.DefinePlugin({

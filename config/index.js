@@ -15,13 +15,16 @@ module.exports = {
 	},
 	dev: {
 		env: {
-			NODE_ENV: 'dev'
+			NODE_ENV: '"development"'
 		},
-		// assetsSubDirectory: 'static',
+		assetsRoot: path.resolve(__dirname, '../dist'),
+		assetsSubDirectory: 'static',
 		assetsPublicPath: '/',
-		cssMinimize: true,
-		cssSourceMap: true,
-		cssExtract: true,
-		jsSourceMap: true
+		cssMinimize: false,
+		cssSourceMap: false,
+		cssExtract: false,
+		jsSourceMap: false,
+		port: 1234,
+		autoOpenBrowse: true
 	}
 }

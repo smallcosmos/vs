@@ -49,10 +49,6 @@ module.exports = {
         		include: [resolve('src')]
 			},
 			{
-				test: /\.less$/,
-				use: 'less-loader'
-			},
-			{
 				test: /\.(scss|sass)$/,
 				use: ['style-loader', 'css-loader', 'sass-loader'] //right to left~~!!
 			},
