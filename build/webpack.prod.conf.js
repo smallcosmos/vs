@@ -2,8 +2,8 @@ var config = require('../config');
 var merge = require('webpack-merge');
 var baseConfig = require('./webpack.base.conf.js');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 var extractTextPlugin = require('extract-text-webpack-plugin');
+var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 var webpack = require('webpack');
 var path = require('path');
 
@@ -14,6 +14,31 @@ module.exports = merge(baseConfig, {
 	},
 	// controls if and how source maps are generated.
 	devtool: config.build.jsSourceMap ? 'source-map' : false,
+	module: {
+		rules: [
+			{
+				test: /\.css$/,
+				use: extractTextPlugin.extract({
+					use: ['css-loader'],
+					fallback: 'style-loader'
+				})
+			},
+			{
+				test: /\.(scss|sass)$/,
+				use: extractTextPlugin.extract({
+					use: ['css-loader', 'sass-loader'], //right to left~~!!
+					fallback: 'style-loader'
+				})
+			},
+			{
+				test: /\.less$/,
+				use: extractTextPlugin.extract({
+					use: ['css-loader', 'less-loader'], //right to left~~!!
+					fallback: 'style-loader'
+				})
+			}
+		]
+	}, 
 	plugins: [
 		new webpack.DefinePlugin({
 			// http://vuejs.github.io/vue-loader/en/workflow/production.html
@@ -21,17 +46,6 @@ module.exports = merge(baseConfig, {
 			'process.env': {
 		        NODE_ENV: '"production"'
 		    }
-		}),
-		// extract css into its own file
-		new extractTextPlugin({
-			filename: path.posix.join(config.build.assetsSubDirectory, 'css/[name].[contenthash].css')
-		}),
-		// Compress extracted CSS. We are using this plugin so that possible
-	    // duplicated CSS from different components can be deduped.
-	    new OptimizeCSSPlugin({
-			cssProcessorOptions: {
-				safe: true
-			}
 		}),
 		// new webpack.optimize.UglifyJsPlugin({
 		// 	compress: {
@@ -54,6 +68,17 @@ module.exports = merge(baseConfig, {
 			// necessary to consistently work with multiple chunks via CommonsChunkPlugin
 			chunksSortMode: 'dependency'
 	    }),
+	    // extract css into its own file
+		new extractTextPlugin({
+			filename: path.posix.join(config.build.assetsSubDirectory, 'css/[name].[contenthash].css')
+		}),
+		// Compress extracted CSS. We are using this plugin so that possible
+	    // duplicated CSS from different components can be deduped.
+	    new OptimizeCSSPlugin({
+			cssProcessorOptions: {
+				safe: true
+			}
+		}),
 	    // split vendor js into its own file
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendor',

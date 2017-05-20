@@ -4,9 +4,14 @@ import App from './App';
 import Home from '@/components/Home';
 import Hello from '@/components/Hello';
 
-import './assets/css/common.less';
-// import './assets/css/common.sass'
-// import './assets/css/common.scss';
+require('./assets/css/reset.css');
+require('./assets/css/function.css');
+require('./assets/css/common.css');
+
+// only for testing less/sass/scss loader
+// import './assets/css/common.less';
+// import './assets/css/common.sass';
+import './assets/css/common.scss';
 
 Vue.use(Router);
 

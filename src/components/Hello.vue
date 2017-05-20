@@ -1,20 +1,22 @@
 <template>
-	<div id="hello">hello</div>
+	<div class="g-content-wrap">
+		<p>{{msg}}</p>
+	</div>
 </template>
 
 <script>
 	module.exports = {
 		data(){
 			return {
-				msg: 'hello'
+				msg: 'This another page!'
 			};
 		}
 	};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
-	#hello{
-		background: blue;
-	}
+<style scoped>
+p{
+	color: #00f;
+}
 </style>

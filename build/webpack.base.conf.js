@@ -49,14 +49,6 @@ module.exports = {
         		include: [resolve('src')]
 			},
 			{
-				test: /\.(scss|sass)$/,
-				use: ['style-loader', 'css-loader', 'sass-loader'] //right to left~~!!
-			},
-			{
-				test: /\.less$/,
-				use: ['style-loader', 'css-loader', 'less-loader'] //right to left~~!!
-			},
-			{
 				test: /\.(jpe?g|png|gif|ico|svg)$/,
 				use: {
 					loader: 'url-loader',

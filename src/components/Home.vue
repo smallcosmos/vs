@@ -1,7 +1,6 @@
 <template>
-	<div class="page">
-		<div id="home">home</div>
-		<div id="hello">hello</div>
+	<div class="g-content-wrap">
+		<p>{{msg}}</p>
 	</div>
 </template>
 
@@ -9,7 +8,7 @@
 	module.exports = {
 		data(){
 			return {
-				msg: 'welcome'
+				msg: 'This is home page!'
 			};
 		}
 	};
@@ -17,7 +16,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-	#home{
-		background: red;
-	}
+p{
+	color: #f00;
+}
 </style>
