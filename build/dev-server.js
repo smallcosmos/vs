@@ -3,12 +3,12 @@ require('./check-version')();
 var config = require('../config/index');
 var devConfig = require('./webpack.dev.conf');
 var express = require('express');
-var app = express();
 var webpack = require('webpack');
 var path = require('path');
 var chalk = require('chalk');
 var opn = require('opn');
 
+var app = express();
 var compiler = webpack(devConfig);
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {

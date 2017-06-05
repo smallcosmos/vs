@@ -4,10 +4,12 @@ var baseConfig = require('./webpack.base.conf.js');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var extractTextPlugin = require('extract-text-webpack-plugin');
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
+var statsPlugin = require('stats-webpack-plugin');
 var webpack = require('webpack');
 var path = require('path');
 
 module.exports = merge(baseConfig, {
+	profile: true,
 	output: {
 		filename: path.posix.join(config.build.assetsSubDirectory, 'js/[name].[chunkhash].js'),
 		// chunkFilename: '[id]'
@@ -95,6 +97,7 @@ module.exports = merge(baseConfig, {
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'manifest',
 			chunks: ['vendor']
-		})
+		}),
+		new statsPlugin('stats.json', 'verbose')
 	]
 });

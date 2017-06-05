@@ -40,6 +40,7 @@
 .g-body{
 	height: 100%;
 	min-height: 800px;
+	background: #fff;
 }
 .g-leftmenu{
 	float: left;
